@@ -543,7 +543,7 @@ verification <- function(
   # Removing the first 2 columns in 'sims': ParameterSetNmbr, GoF
   sims <- sims[, 3:nc]  
   colnames(sims) <- paste0("sim", 1:(nc-2))
-  colnames(sims) <- paste0("par", 1:nparamsets)
+  rownames(sims) <- paste0("par", 1:nparamsets)
 
 
   ifelse(MinMax=="min", best.rowindex <- which.min(gof.all),
